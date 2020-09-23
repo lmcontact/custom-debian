@@ -11,3 +11,5 @@ lb config noauto \
 	--archive-areas "main contrib non-free" \
 	--distribution buster \
 	"${@}"
+
+echo "terminator htop snapd zsh remmina" > config/package-lists/standard.list.chroot
