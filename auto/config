@@ -1,0 +1,12 @@
+#!/bin/sh
+
+set -e
+
+lb config noauto \
+	--apt-indices true \
+	--apt-recommends false \
+	--architectures amd64 \
+	--memtest none \
+	--system live \
+	--archive-areas "main contrib non-free" \
+	"${@}"
