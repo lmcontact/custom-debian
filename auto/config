@@ -12,4 +12,4 @@ lb config noauto \
 	--distribution buster \
 	"${@}"
 
-echo "terminator htop snapd zsh remmina" > config/package-lists/standard.list.chroot
+cp auto/package-lists/* config/package-lists/
