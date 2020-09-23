@@ -9,4 +9,5 @@ lb config noauto \
 	--memtest none \
 	--system live \
 	--archive-areas "main contrib non-free" \
+	--distribution buster \
 	"${@}"
