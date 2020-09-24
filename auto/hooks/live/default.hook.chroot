@@ -20,3 +20,6 @@ apt update --yes
 apt install --yes nordvpn
 
 rm -f ./nordvpn-release_1.0.0_all.deb
+
+# install ohmyzsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
