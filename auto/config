@@ -11,3 +11,6 @@ lb config noauto \
 	--archive-areas "main contrib non-free" \
 	--distribution buster \
 	"${@}"
+
+cp auto/package-lists/* config/package-lists/
+cp auto/hooks/live/* config/hooks/live
