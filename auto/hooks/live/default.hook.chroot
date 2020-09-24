@@ -5,17 +5,12 @@ NORDVPN_URL="https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/nordvpn-relea
 
 set -e
 
-# install snap core
-snap install core
-
 # install vscode and ssh extension
 wget -O vscode.deb $VSCODE_URL
 
 apt install --yes ./vscode.deb
 
 rm -f vscode.deb
-
-code --install-extension ms-vscode-remote.remote-ssh
 
 # install nordvpn
 wget -O nordvpn.deb $NORDVPN_URL

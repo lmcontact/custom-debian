@@ -1,0 +1,3 @@
+#!/bin/sh
+
+nordvpn login && nordvpn connect $1 && nordvpn set killswitch on
