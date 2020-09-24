@@ -1,25 +1,32 @@
 #!/bin/sh
 
+VSCODE_URL="https://go.microsoft.com/fwlink/?LinkID=760868"
+NORDVPN_URL="https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/nordvpn-release_1.0.0_all.deb"
+
 set -e
 
-# install snapd core
+# install snap core
 snap install core
 
 # install vscode and ssh extension
-snap install --classic code
+wget -O vscode.deb $VSCODE_URL
+
+apt install --yes ./vscode.deb
+
+rm -f vscode.deb
 
 code --install-extension ms-vscode-remote.remote-ssh
 
 # install nordvpn
-wget "https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/nordvpn-release_1.0.0_all.deb"
+wget -O nordvpn.deb $NORDVPN_URL
 
-apt install --yes ./nordvpn-release_1.0.0_all.deb
+apt install --yes ./nordvpn.deb
 
 apt update --yes
 
 apt install --yes nordvpn
 
-rm -f ./nordvpn-release_1.0.0_all.deb
+rm -f ./nordvpn.deb
 
 # install ohmyzsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
