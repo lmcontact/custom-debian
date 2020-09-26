@@ -1,4 +1,9 @@
 #!/bin/sh
 
 useradd -mG sudo -s /bin/zsh user
+
 echo "user:p@ssw0rd" | chpasswd
+
+touch /home/user/.zshrc
+
+runuser -l user -c 'setup-ohmyzsh'
