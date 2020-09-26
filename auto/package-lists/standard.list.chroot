@@ -1,6 +1,7 @@
 ca-certificates
 curl
 wget
+sudo
 git
 zsh
 terminator
