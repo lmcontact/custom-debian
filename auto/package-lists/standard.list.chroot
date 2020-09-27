@@ -7,5 +7,7 @@ zsh
 terminator
 htop
 remmina
-task-gnome-desktop
+gnome-core
+network-manager
+network-manager-gnome
 firefox-esr

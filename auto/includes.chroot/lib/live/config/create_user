@@ -6,4 +6,4 @@ echo "user:p@ssw0rd" | chpasswd
 
 touch /home/user/.zshrc
 
-runuser -l user -c 'setup-ohmyzsh'
+#runuser -l user -c 'setup-ohmyzsh'
