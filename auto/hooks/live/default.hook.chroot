@@ -21,7 +21,7 @@ rm -f $VSCODE_FILE
 
 mkdir -p /home/user/.config/Code/User
 
-mv /tmp/vscode.settings.json /home/user/.config/Code/User/settings.json
+mv /tmp/settings.json /home/user/.config/Code/User
 
 # install nordvpn
 wget -O $NORDVPN_FILE $NORDVPN_URL
