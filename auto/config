@@ -12,10 +12,10 @@ lb config noauto \
 	--distribution buster \
 	"${@}"
 
-cp auto/package-lists/* config/package-lists/
+cp -r auto/package-lists/* config/package-lists/
 
-cp auto/hooks/live/* config/hooks/live
+cp -r auto/hooks/live/* config/hooks/live/
 
 cp -r auto/includes.chroot/* config/includes.chroot/
 
-cp -r auto/bootloaders/* config/bootloaders
+cp -r auto/bootloaders config
