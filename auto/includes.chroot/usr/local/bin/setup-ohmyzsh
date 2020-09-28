@@ -102,7 +102,7 @@ setup_ohmyzsh() {
 		exit 1
 	fi
 
-	mv "${ZSH_TMP}" "$ZSH"
+	mv "$ZSH_TMP" "$ZSH"
 
 	echo
 }
