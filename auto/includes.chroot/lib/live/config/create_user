@@ -6,4 +6,8 @@ echo "user:$DEBIAN_DEFAULT_PASSWORD" | chpasswd
 
 touch /home/user/.zshrc
 
+chown user:user /home/user/.config/Code/User/settings.json
+chown user:user /home/user/.oh-my-zsh
+
 runuser -l user -c 'setup-ohmyzsh --unattended'
+
