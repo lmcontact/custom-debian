@@ -1,7 +1,12 @@
 #!/bin/sh
 
+# Default settings
 VSCODE_URL="https://go.microsoft.com/fwlink/?LinkID=760868"
 NORDVPN_URL="https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/nordvpn-release_1.0.0_all.deb"
+ZSH=${ZSH:-/tmp/.oh-my-zsh}
+REPO=${REPO:-ohmyzsh/ohmyzsh}
+REMOTE=${REMOTE:-https://github.com/${REPO}.git}
+BRANCH=${BRANCH:-master}
 
 set -e
 
@@ -22,3 +27,10 @@ apt update --yes
 apt install --yes nordvpn
 
 rm -f ./nordvpn.deb
+
+# clone ohmyzsh
+git clone -c core.eol=lf -c core.autocrlf=false \
+	-c fsck.zeroPaddedFilemode=ignore \
+	-c fetch.fsck.zeroPaddedFilemode=ignore \
+	-c receive.fsck.zeroPaddedFilemode=ignore \
+	--depth=1 --branch "$BRANCH" "$REMOTE" "$ZSH"

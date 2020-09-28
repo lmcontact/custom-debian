@@ -2,7 +2,7 @@
 
 useradd -mG sudo -s /bin/zsh user
 
-echo "user:p@ssw0rd" | chpasswd
+echo "user:$DEBIAN_DEFAULT_PASSWORD" | chpasswd
 
 touch /home/user/.zshrc
 
