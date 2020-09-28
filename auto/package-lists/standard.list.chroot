@@ -4,6 +4,7 @@ wget
 sudo
 git
 zsh
+vim
 terminator
 htop
 remmina
