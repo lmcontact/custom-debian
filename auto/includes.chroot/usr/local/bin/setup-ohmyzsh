@@ -102,7 +102,7 @@ setup_ohmyzsh() {
 		exit 1
 	fi
 
-	cp -r "${ZSH_TMP}" "$ZSH"
+	mv "${ZSH_TMP}" "$ZSH"
 
 	echo
 }

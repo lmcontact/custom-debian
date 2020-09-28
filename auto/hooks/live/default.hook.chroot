@@ -2,7 +2,9 @@
 
 # Default settings
 VSCODE_URL="https://go.microsoft.com/fwlink/?LinkID=760868"
+VSCODE_FILE="vscode.deb"
 NORDVPN_URL="https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/nordvpn-release_1.0.0_all.deb"
+NORDVPN_FILE="nordvpn.deb"
 ZSH=${ZSH:-/tmp/.oh-my-zsh}
 REPO=${REPO:-ohmyzsh/ohmyzsh}
 REMOTE=${REMOTE:-https://github.com/${REPO}.git}
@@ -10,23 +12,29 @@ BRANCH=${BRANCH:-master}
 
 set -e
 
-# install vscode and ssh extension
-wget -O vscode.deb $VSCODE_URL
+# install vscode and ssh extension then disable telemetry
+wget -O $VSCODE_FILE $VSCODE_URL
 
-apt install --yes ./vscode.deb
+apt install --yes "./$VSCODE_FILE"
 
-rm -f vscode.deb
+rm -f $VSCODE_FILE
+
+mkdir -p /home/user/.config/Code/User
+
+chown user:user /tmp/vscode.settings.json
+
+mv /tmp/vscode.settings.json /home/user/.config/Code/User
 
 # install nordvpn
-wget -O nordvpn.deb $NORDVPN_URL
+wget -O $NORDVPN_FILE $NORDVPN_URL
 
-apt install --yes ./nordvpn.deb
+apt install --yes "./$NORDVPN_FILE"
 
 apt update --yes
 
 apt install --yes nordvpn
 
-rm -f ./nordvpn.deb
+rm -f "./$NORDVPN_FILE"
 
 # clone ohmyzsh
 git clone -c core.eol=lf -c core.autocrlf=false \
@@ -34,3 +42,5 @@ git clone -c core.eol=lf -c core.autocrlf=false \
 	-c fetch.fsck.zeroPaddedFilemode=ignore \
 	-c receive.fsck.zeroPaddedFilemode=ignore \
 	--depth=1 --branch "$BRANCH" "$REMOTE" "$ZSH"
+
+chown -R user:user $ZSH
