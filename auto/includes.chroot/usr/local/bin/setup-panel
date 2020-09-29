@@ -3,4 +3,6 @@
 FILE="/usr/local/share/panel"
 COPY="/home/user/.config/lxpanel/LXDE/panels/panel"
 
+mkdir -p /home/user/.config/lxpanel/LXDE/panels
+
 cat $FILE > $COPY && lxpanelctl restart

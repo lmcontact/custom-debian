@@ -5,6 +5,7 @@ set -e
 lb config noauto \
 	--apt-indices true \
 	--apt-recommends false \
+	--bootloaders syslinux \
 	--architectures amd64 \
 	--memtest none \
 	--system live \
