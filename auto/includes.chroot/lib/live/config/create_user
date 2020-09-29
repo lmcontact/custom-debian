@@ -6,7 +6,7 @@ echo "user:p@ssw0rd" | chpasswd
 
 touch /home/user/.zshrc
 
-chown user:user /home/user/.config/Code/User/settings.json
+chown -R user:user /home/user
 
-runuser -l user -c 'setup-ohmyzsh --unattended'
+#runuser -l user -c 'setup-ohmyzsh --unattended'
 

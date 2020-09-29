@@ -8,7 +8,6 @@ vim
 terminator
 htop
 remmina
-task-gnome-desktop
-network-manager
+task-lxde-desktop
 network-manager-gnome
 firefox-esr
