@@ -6,6 +6,8 @@ echo "user:p@ssw0rd" | chpasswd
 
 touch /home/user/.zshrc
 
+cp /usr/local/share/panel /home/user/.config/lxpanel/LXDE/panels/
+
 chown -R user:user /home/user
 
 #runuser -l user -c 'setup-ohmyzsh --unattended'
