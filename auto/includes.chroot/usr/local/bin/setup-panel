@@ -1,0 +1,8 @@
+#!/bin/sh
+
+FILE="/usr/local/share/panel"
+COPY="/home/user/.config/lxpanel/LXDE/panels/panel"
+
+if [ ! -e $COPY ] || [ cmp $FILE $COPY ]; then
+	cat $FILE > $COPY && lxpanelctl restart
+fi
