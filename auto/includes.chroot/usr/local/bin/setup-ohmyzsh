@@ -38,7 +38,7 @@
 set -e
 
 # Default settings
-ZSH_TMP=${ZSH_TMP:-/tmp/.oh-my-zsh}
+ZSH_TMP=${ZSH_TMP:-/usr/local/share/oh-my-zsh}
 ZSH=${ZSH:-~/.oh-my-zsh}
 REPO=${REPO:-ohmyzsh/ohmyzsh}
 REMOTE=${REMOTE:-https://github.com/${REPO}.git}
@@ -102,7 +102,7 @@ setup_ohmyzsh() {
 		exit 1
 	fi
 
-	mv "$ZSH_TMP" "$ZSH"
+	cp -r "$ZSH_TMP" "$ZSH"
 
 	echo
 }

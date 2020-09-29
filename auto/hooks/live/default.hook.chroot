@@ -5,7 +5,7 @@ VSCODE_URL="https://go.microsoft.com/fwlink/?LinkID=760868"
 VSCODE_FILE="vscode.deb"
 NORDVPN_URL="https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/nordvpn-release_1.0.0_all.deb"
 NORDVPN_FILE="nordvpn.deb"
-ZSH=${ZSH:-/tmp/.oh-my-zsh}
+ZSH=${ZSH:-/usr/local/share/oh-my-zsh}
 REPO=${REPO:-ohmyzsh/ohmyzsh}
 REMOTE=${REMOTE:-https://github.com/${REPO}.git}
 BRANCH=${BRANCH:-master}
