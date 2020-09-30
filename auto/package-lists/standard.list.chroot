@@ -4,10 +4,12 @@ wget
 sudo
 git
 zsh
+ssh
 vim
 terminator
 htop
 remmina
+remmina-plugin-vnc
 task-lxde-desktop
 network-manager-gnome
 firefox-esr
