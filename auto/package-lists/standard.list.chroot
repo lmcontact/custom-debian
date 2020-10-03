@@ -6,10 +6,11 @@ git
 zsh
 ssh
 vim
+ffmpeg
 terminator
 htop
 remmina
 remmina-plugin-vnc
-task-lxde-desktop
+task-gnome-desktop
 network-manager-gnome
 firefox-esr
