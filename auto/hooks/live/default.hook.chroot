@@ -21,7 +21,7 @@ rm -f $VSCODE_FILE
 
 mkdir -p /home/user/.config/Code/User
 
-echo "{\n\t\"telemetry.enableCrashReporter\": false\n\t\"telemetry.enableTelemetry\": false\n}" > /home/user/.config/Code/User/settings.json
+echo "{\n\t\"telemetry.enableCrashReporter\": false,\n\t\"telemetry.enableTelemetry\": false\n}" > /home/user/.config/Code/User/settings.json
 
 # install nordvpn
 wget -O $NORDVPN_FILE $NORDVPN_URL
