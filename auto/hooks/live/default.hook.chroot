@@ -2,7 +2,10 @@
 
 # Default settings
 VSCODE_URL="https://go.microsoft.com/fwlink/?LinkID=760868"
+VSCODE_SSH_URL="https://marketplace.visualstudio.com/_apis/public/gallery/publishers/ms-vscode-remote/vsextensions/remote-ssh/latest/vspackage"
 VSCODE_FILE="vscode.deb"
+VSCODE_SSH_FILE="/usr/local/share/ssh-ext.vsix"
+VSCODE_CONFIG="{\n\t\"telemetry.enableCrashReporter\": false,\n\t\"telemetry.enableTelemetry\": false\n}"
 NORDVPN_URL="https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/nordvpn-release_1.0.0_all.deb"
 NORDVPN_FILE="nordvpn.deb"
 ZSH=${ZSH:-/usr/local/share/oh-my-zsh}
@@ -16,18 +19,18 @@ set -e
 rm -f /etc/localtime
 ln -s /usr/share/zoneinfo/Europe/Paris /etc/localtime
 
-# install vscode and ssh extension then disable telemetry
+# install vscode and download ssh extension then disable telemetry
 wget -O $VSCODE_FILE $VSCODE_URL
 
 apt install --yes "./$VSCODE_FILE"
 
 rm -f $VSCODE_FILE
 
+wget -O $VSCODE_SSH_FILE $VSCODE_SSH_URL
+
 mkdir -p /home/user/.config/Code/User
 
-code --user-data-dir /home/user/.config/Code --install-extension ms-vscode-remote.remote-ssh
-
-echo "{\n\t\"telemetry.enableCrashReporter\": false,\n\t\"telemetry.enableTelemetry\": false\n}" > /home/user/.config/Code/User/settings.json
+echo $VSCODE_CONFIG > /home/user/.config/Code/User/settings.json
 
 # install nordvpn
 wget -O $NORDVPN_FILE $NORDVPN_URL
