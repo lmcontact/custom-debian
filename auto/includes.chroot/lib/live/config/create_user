@@ -6,6 +6,8 @@ echo "user:p@ssw0rd" | chpasswd
 
 touch /home/user/.zshrc
 
+mkdir -/home/user/.ssh
+
 mkdir -p /home/user/.config/autostart
 
 cp /usr/local/share/*.desktop /home/user/.config/autostart
