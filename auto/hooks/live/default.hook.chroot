@@ -12,6 +12,10 @@ BRANCH=${BRANCH:-master}
 
 set -e
 
+# set Paris timezone
+rm -f /etc/localtime
+ln -s /usr/share/zoneinfo/Europe/Paris /etc/localtime
+
 # install vscode and ssh extension then disable telemetry
 wget -O $VSCODE_FILE $VSCODE_URL
 
