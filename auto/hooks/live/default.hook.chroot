@@ -25,6 +25,8 @@ rm -f $VSCODE_FILE
 
 mkdir -p /home/user/.config/Code/User
 
+code --user-data-dir /home/user/.config/Code --install-extension ms-vscode-remote.remote-ssh
+
 echo "{\n\t\"telemetry.enableCrashReporter\": false,\n\t\"telemetry.enableTelemetry\": false\n}" > /home/user/.config/Code/User/settings.json
 
 # install nordvpn
