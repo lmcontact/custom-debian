@@ -26,7 +26,7 @@ apt install --yes "./$VSCODE_FILE"
 
 rm -f $VSCODE_FILE
 
-wget -O $VSCODE_SSH_FILE $VSCODE_SSH_URL
+curl --compressed --output $VSCODE_SSH_FILE $VSCODE_SSH_URL
 
 mkdir -p /home/user/.config/Code/User
 
