@@ -12,6 +12,6 @@ mkdir -p /home/user/.config/autostart
 
 cp /usr/local/share/*.desktop /home/user/.config/autostart
 
-runuser -l user -c "code --install-extension /usr/local/share/ssh-ext.vsix"
+#runuser -l user -c "code --install-extension /usr/local/share/ssh-ext.vsix"
 
 chown -R user:user /home/user
